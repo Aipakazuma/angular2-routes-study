@@ -11,6 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { routing } from './app.routes';
+import { SearchComponent } from './search/search.component';
+import { ArtistComponent } from './artist/artist.component';
+import { TrackComponent } from './track/track.component';
+import { AlbumComponent } from './album/album.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { routing } from './app.routes';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    SearchComponent,
+    ArtistComponent,
+    TrackComponent,
+    AlbumComponent,
   ],
   imports: [
     routing,
@@ -25,7 +33,7 @@ import { routing } from './app.routes';
     FormsModule,
     HttpModule
   ],
-  // providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
