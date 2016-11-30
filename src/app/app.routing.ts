@@ -8,6 +8,12 @@ import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
 import { AlbumComponent } from './album/album.component';
 
+import { SubModule } from './under/sub/sub.module';
+
+function loadSubModule(): any {
+  return SubModule;
+}
+
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -16,8 +22,9 @@ export const appRoutes: Routes = [
   { path: 'artists/:id', component: ArtistComponent },
   { path: 'stracks/:id', component: TrackComponent },
   { path: 'albums/:id', component: AlbumComponent },
+  { path: 'sub', loadChildren: loadSubModule },
   { path: 'contactus', redirectTo: 'contact' },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ]; 
 
-export const routing = RouterModule.forRoot(appRoutes, { useHash: true});
+export const routing = RouterModule.forRoot(appRoutes, { useHash: true });

@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { routing } from './app.routes';
+import { routing } from './app.routing';
 import { SearchComponent } from './search/search.component';
 import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
@@ -25,7 +25,7 @@ import { AlbumComponent } from './album/album.component';
     SearchComponent,
     ArtistComponent,
     TrackComponent,
-    AlbumComponent,
+    AlbumComponent
   ],
   imports: [
     routing,
