@@ -41,10 +41,6 @@ export class SearchComponent implements OnInit {
     if (res && res.tracks && res.tracks.items) {
       this.results = res.tracks.items;
     }
-
-    this.spotify
-      .searchByTrack(this.query)
-      .subscribe((res: any) => this.renderResults(res));
   }
 
   submit(query: string): void {

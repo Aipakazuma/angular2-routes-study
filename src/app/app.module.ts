@@ -8,6 +8,7 @@ import {SearchComponent} from './search/search.component';
 import {BrowserModule} from "@angular/platform-browser";
 import {SpotifyService} from "./spotify.service";
 import {routing} from './app.routing';
+import { TrackComponent } from './track/track.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {routing} from './app.routing';
   ],
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    TrackComponent
   ],
   providers: [
     SpotifyService,
