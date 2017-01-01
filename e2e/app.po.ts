@@ -6,6 +6,6 @@ export class Angular2RoutesStudyPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('app_turtorial-root h1')).getText();
   }
 }

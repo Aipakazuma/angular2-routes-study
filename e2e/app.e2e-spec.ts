@@ -7,8 +7,8 @@ describe('angular2-routes-study App', function() {
     page = new Angular2RoutesStudyPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying app_turtorial works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('app_turtorial works!');
   });
 });

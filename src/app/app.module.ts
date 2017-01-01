@@ -1,39 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
-import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
-
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-
-import { routing } from './app.routing';
-import { SearchComponent } from './search/search.component';
-import { ArtistComponent } from './artist/artist.component';
-import { TrackComponent } from './track/track.component';
-import { AlbumComponent } from './album/album.component';
+import {NgModule} from '@angular/core';
+import {CommonModule, LocationStrategy, HashLocationStrategy, APP_BASE_HREF} from '@angular/common';
+import {AppComponent} from './app.component';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {SearchComponent} from './search/search.component';
+import {BrowserModule} from "@angular/platform-browser";
+import {SpotifyService} from "./spotify.service";
+import {routing} from './app.routing';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    SearchComponent,
-    ArtistComponent,
-    TrackComponent,
-    AlbumComponent
-  ],
   imports: [
     routing,
-    BrowserModule,
+    CommonModule,
+    HttpModule,
     FormsModule,
-    HttpModule
+    RouterModule,
+    BrowserModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  declarations: [
+    AppComponent,
+    SearchComponent
+  ],
+  providers: [
+    SpotifyService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/'
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
