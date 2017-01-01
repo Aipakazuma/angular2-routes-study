@@ -27,7 +27,3 @@ export class AuthService {
   }
 
 }
-
-export let AUTH_PROVIDERS: Array<any> = [
-  {provide: AuthService, useClass: AuthService}
-];
